@@ -1,24 +1,28 @@
 package Batch2_Cucumber_Framework;
 
+import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import cucumber.api.TypeRegistry;
 import cucumber.api.TypeRegistryConfigurer;
 import io.cucumber.datatable.DataTableType;
-import io.cucumber.datatable.TableEntryTransformer;
+import io.cucumber.datatable.TableRowTransformer;
 
 public class Configurer implements TypeRegistryConfigurer {
 
 	@Override
 	public void configureTypeRegistry(TypeRegistry registry) {
-
-		registry.defineDataTableType(new DataTableType(UserInfo.class, new TableEntryTransformer<UserInfo>() {
-			@Override
-			public UserInfo transform(Map<String, String> entry) throws Throwable {
-				return new UserInfo(entry.get("ID"), entry.get("Username"), entry.get("Password"));
-			}
-		}));
+		registry.defineDataTableType(
+			new DataTableType(
+					UserInfo.class, 
+					new TableRowTransformer<UserInfo>() {
+						@Override
+						public UserInfo transform(List<String> entry) throws Throwable {
+							return new UserInfo(entry.get(0), entry.get(1), entry.get(2));
+						}
+					}
+			)
+		);
 	}
 
 	@Override
