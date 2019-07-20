@@ -1,5 +1,6 @@
 Feature: Amazon UI Tests
-
+	
+	@UI_Test @Regression
   Scenario Outline: Search for fuctionality
     Given User is on amazon homepage
     When User search for "<item>"

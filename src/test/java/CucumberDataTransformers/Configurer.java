@@ -1,8 +1,9 @@
-package Batch2_Cucumber_Framework;
+package CucumberDataTransformers;
 
 import java.util.List;
 import java.util.Locale;
 
+import DataObjects.UserInfo;
 import cucumber.api.TypeRegistry;
 import cucumber.api.TypeRegistryConfigurer;
 import io.cucumber.datatable.DataTableType;

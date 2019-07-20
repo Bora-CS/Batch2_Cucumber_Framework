@@ -1,4 +1,4 @@
-package Batch2_Cucumber_Framework;
+package AmazonStepDefs;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -15,6 +15,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import DataObjects.UserInfo;
 import Utilities.Keywords;
 
 public class AmazonTestSteps {
@@ -71,12 +72,24 @@ public class AmazonTestSteps {
 		// Map<K, List<V>>. E,K,V must be a String, Integer, Float,
 		// Double, Byte, Short, Long, BigInteger or BigDecimal.
 
-		List<UserInfo> tableToUserInfos = dataTable.asList(UserInfo.class);
+		List<UserInfo> userInfoTable = dataTable.asList(UserInfo.class);
 
-		for (UserInfo userInfo : tableToUserInfos) {
+		for (UserInfo userInfo : userInfoTable) {
 			System.out.println("| " + userInfo.ID + "\t| " + userInfo.Username + "\t| " + userInfo.Password + "\t|");
 		}
+		
+		// Get user data eith ID 2
+		System.out.println(getDataByID(userInfoTable, "2").Username);
 
+	}
+	
+	private UserInfo getDataByID(List<UserInfo> inputData, String ID) {
+		for (UserInfo input : inputData) {
+			if (input.ID.equals(ID)) {
+				return input;
+			}
+		}
+		return null;
 	}
 
 	private List<String> getDataByID(List<List<String>> infos, int i) {

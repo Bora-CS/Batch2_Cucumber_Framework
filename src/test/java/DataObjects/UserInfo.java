@@ -1,4 +1,4 @@
-package Batch2_Cucumber_Framework;
+package DataObjects;
 
 public class UserInfo {
 	public String ID;

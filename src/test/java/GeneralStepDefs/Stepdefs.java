@@ -1,4 +1,4 @@
-package Batch2_Cucumber_Framework;
+package GeneralStepDefs;
 
 import org.junit.Assert;
 
@@ -36,5 +36,4 @@ public class Stepdefs {
 	public void i_should_be_told(String expectedAnswer) {
 		Assert.assertEquals(expectedAnswer, actualAnswer);
 	}
-
 }

@@ -1,5 +1,6 @@
 Feature: Running tests with data tables
 
+	@Smoke
   Scenario: Using datatables for steps
     Given User is registered with amazon.com
       | 1 | muradil@gmail.com | murad123 |
