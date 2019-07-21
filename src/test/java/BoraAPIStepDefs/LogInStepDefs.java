@@ -47,7 +47,9 @@ public class LogInStepDefs {
 		for (String key : expectedErrorMsg.keySet()) {
 			Assert.assertTrue("Key " + key + " does not exist in the response.",actualErrorMsg.containsKey(key));
 			Assert.assertEquals(expectedErrorMsg.get(key), actualErrorMsg.get(key));
+			
 		}
+		
 	}
 
 }
