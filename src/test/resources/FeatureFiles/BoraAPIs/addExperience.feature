@@ -7,4 +7,6 @@ Feature: Add user experience
       | title       | Senior Developer |
       | company     | BoraTech         |
       | from        | 2019-4-20        |
-    Then User should get a 200 and see updated profile with experience added
+    Then User should see updated profile with experience added
+      | Status Code |              200 |
+      | Title       | Senior Developer |
