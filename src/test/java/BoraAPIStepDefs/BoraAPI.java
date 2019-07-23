@@ -1,5 +1,4 @@
 package BoraAPIStepDefs;
-
 import org.json.simple.JSONObject;
 
 import Utilities.Constants;
@@ -17,7 +16,7 @@ public class BoraAPI {
 		request.header("Content-Type", "application/json");
 		
 		JSONObject requestBody = new JSONObject();
-		requestBody.put("email", username);
+		requestBody.put("username", username);
 		requestBody.put("password", password);
 		request.body(requestBody);
 		
