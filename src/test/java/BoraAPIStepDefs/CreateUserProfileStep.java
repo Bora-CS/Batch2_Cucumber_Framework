@@ -16,24 +16,18 @@ public class CreateUserProfileStep {
 	public void user_is_loged_in_to_Bora_API() {
 		response = BoraAPI.login("student@gmail.com", "student123");
 		System.out.println();
-		
-		
-		
+
 		Assert.assertTrue("Status code unexpected! Expected status code:" + statusCode + " Actual status code:"
 				+ response.getStatusCode(), response.getStatusCode() == statusCode);
 		Assert.assertTrue("No token received!", response.getBody().asString().contains("token"));
 	}
 
-	
-	
 //	public static void validationLogin(int statusCode) {
 //		Assert.assertTrue("Status code unexpected! Expected status code:" + statusCode + " Actual status code:"
 //				+ response.getStatusCode(), response.getStatusCode() == statusCode);
 //		Assert.assertTrue("No token received!", response.getBody().asString().contains("token"));
 //	}
 //	 
-	
-	
 
 	@When("User pass in valid information")
 	public void user_pass_in_valid_information(io.cucumber.datatable.DataTable dataTable) {
@@ -49,7 +43,6 @@ public class CreateUserProfileStep {
 
 	@Then("User should get a {int} status code")
 	public void user_should_get_a_status_code(Integer int1) {
-		
 
 	}
 

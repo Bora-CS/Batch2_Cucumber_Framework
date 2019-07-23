@@ -15,8 +15,8 @@ public class UserProfileInfo {
 		this.skills = skills;
 
 	}
-	public UserProfileInfo () {
+
+	public UserProfileInfo() {
 	}
 
-	
 }
