@@ -24,6 +24,8 @@ public class CreateUserProfileStep {
 		Assert.assertTrue("No token received!", response.getBody().asString().contains("token"));
 	}
 
+	
+	
 //	public static void validationLogin(int statusCode) {
 //		Assert.assertTrue("Status code unexpected! Expected status code:" + statusCode + " Actual status code:"
 //				+ response.getStatusCode(), response.getStatusCode() == statusCode);
