@@ -6,6 +6,6 @@ Feature: Add user experience
     When User add valid experience data to user's profile
       | title       | Senior Developer |
       | company     | BoraTech         |
-      | from        | 2019-04-20        |
+      | from        | 2019-04-20       |
     Then User should get a 200
     And User should see updated profile with experience added
