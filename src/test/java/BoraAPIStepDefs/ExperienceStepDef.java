@@ -40,7 +40,6 @@ public class ExperienceStepDef {
 		Assert.assertTrue(response.getBody().asString().contains("Senior Developer"));
 		Assert.assertTrue(response.getBody().asString().contains("BoraTech"));
 		Assert.assertTrue(response.getBody().asString().contains("2019-04-20"));
-
 	}
 
 }

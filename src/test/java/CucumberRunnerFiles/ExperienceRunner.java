@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 		dryRun = false,
 		plugin = {"html:target/html_reports"},
-		glue = {"ExperienceStepDef"},
+		glue = {"BoraAPIStepDefs"},
 		features = {"src/test/resources/FeatureFiles/BoraAPIs/Experience.feature"}
 		)
 public class ExperienceRunner {
