@@ -1,7 +1,10 @@
 package BoraAPIStepDefs;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
+import org.json.simple.parser.ParseException;
 import org.junit.Assert;
 
 import cucumber.api.java.en.Given;
@@ -25,21 +28,19 @@ public class ExperienceStepDef {
 	}
 
 	@When("User add valid experience data to user's profile")
-	public void user_add_valid_experience_data_to_user_s_profile(DataTable dataTable) {
+	public void user_add_valid_experience_data_to_user_s_profile(DataTable dataTable) throws UnsupportedEncodingException, IOException, ParseException {
 		Map<String, String> Data = dataTable.asMap(String.class, String.class);
-		response = BoraAPI.AddExperience(token, Data);
+		response = BoraAPI.AddExperienceWithTemplate(token, Data);
 	}
 
 	@Then("User should get a {int}")
 	public void user_should_get_a(int statusCode) {
-		Assert.assertTrue(statusCode == response.getStatusCode());
+		BoraAPI.statusCodeValidation(statusCode, response.getStatusCode());
 	}
 
 	@Then("User should see updated profile with experience added")
 	public void user_should_see_updated_profile_with_experience_added() {
-		Assert.assertTrue(response.getBody().asString().contains("Senior Developer"));
-		Assert.assertTrue(response.getBody().asString().contains("BoraTech"));
-		Assert.assertTrue(response.getBody().asString().contains("2019-04-20"));
+//		BoraAPI.addExperienceValidation();
 	}
 
 }
