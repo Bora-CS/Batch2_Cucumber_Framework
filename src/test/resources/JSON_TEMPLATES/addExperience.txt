@@ -1,0 +1,9 @@
+{
+    "current": CURRENT_VALUE,
+    "title": "TITLE_VALUE",
+    "company": "COMPANY_VALUE",
+    "location": "LOCATION_VALUE",
+    "from": "FROM_VALUE",
+    "to": "TO_VALUE",
+    "description": "DESCRIPTION_VALUE"
+}
