@@ -36,10 +36,9 @@ public class ExperienceStepDef {
 	}
 
 	@Then("User should see updated profile with experience added")
-	public void user_should_see_updated_profile_with_experience_added() {
-		Assert.assertTrue(response.getBody().asString().contains("Senior Developer"));
-		Assert.assertTrue(response.getBody().asString().contains("BoraTech"));
-		Assert.assertTrue(response.getBody().asString().contains("2019-04-20"));
+	public void user_should_see_updated_profile_with_experience_added(Map<String, String> dataTable) {
+		
+		System.out.println(response.getBody());
 	}
 
 }
