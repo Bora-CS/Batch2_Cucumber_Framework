@@ -1,0 +1,7 @@
+{
+    "handle": "	HANDLE_VALUE",
+    "company": "COMPANY_VALUE",
+    "location": "LOCATION_VALUE",
+    "status": "LOCATION_VALUE",
+    "skills": "SKILLS_VALUE" 
+}
