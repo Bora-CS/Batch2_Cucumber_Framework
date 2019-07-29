@@ -1,9 +1,8 @@
 package BoraAPIStepDefs;
 
-import java.util.HashMap;
+
 import java.util.Map;
 
-import org.json.simple.JSONObject;
 import org.junit.Assert;
 
 import Utilities.Constants;
@@ -32,13 +31,13 @@ public class ExperienceStepDef {
 
 	@When("User add valid experience data to user's profile")
 	public void user_add_valid_experience_data_to_user_s_profile(DataTable dataTable) {
-		Map<String, String> Data = dataTable.asMap(String.class, String.class);
+	Map<String, String> Data = dataTable.asMap(String.class, String.class);
 		response = BoraAPI.AddExperience(token, Data);
 	}
 
 	@Then("User should get a {int}")
 	public void user_should_get_a(int statusCode) {
-		Assert.assertTrue(statusCode == response.getStatusCode());
+		BoraAPI.statusCodeValidation(statusCode, response.getStatusCode());
 	}
 
 	@Then("User should see updated profile with experience added")
@@ -47,6 +46,7 @@ public class ExperienceStepDef {
 			String title = jp.get("experience[0].title");
 			Assert.assertTrue(title.equals(data.get("title")));
 	}
+	
 	@When("User add INvalid experience data to user's profile")
 	public void user_add_INvalid_experience_data_to_user_s_profile(DataTable dataTable) {
 		Map<String, String> Data = dataTable.asMap(String.class, String.class);
