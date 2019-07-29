@@ -12,6 +12,8 @@ import io.restassured.specification.RequestSpecification;
 
 public class BoraAPI {
 
+
+
 	public static Response login(String email, String password) {
 		String endpoint = "/api/users/login";
 		RestAssured.baseURI = Constants.BORA_API_APPLICATION_URL;
@@ -40,7 +42,4 @@ public class BoraAPI {
 		Response response = request.post(endpoint);
 		return response;
 	}
-	
-
-
 }
