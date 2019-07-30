@@ -6,10 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		dryRun = false,
+		
 		plugin = {"html:target/html_reports"},
-		glue = {"AmazonStepDefs","GeneralStepDefs"},
-		features = {"src/test/resources/FeatureFiles/is_it_friday_yet.feature"}
+		glue = {"BoraAPIStepDefs"},
+		features = {"src/test/resources/FeatureFiles/CreateUserProfile.feature"}
 		)
 public class RunCucumberTest {
 }
