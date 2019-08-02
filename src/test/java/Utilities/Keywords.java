@@ -6,7 +6,7 @@ public class Keywords {
 		System.setProperty("webdriver.chrome.driver", determineOSandGetDriverPath());
 	}
 	
-	private static String determineOSandGetDriverPath() throws Exception {
+	public static String determineOSandGetDriverPath() throws Exception {
 		String os = System.getProperty("os.name");
 		if (os.toLowerCase().startsWith("mac")) {
 			return Constants.CHROME_DRIVER_PATH_MAC;
@@ -16,5 +16,13 @@ public class Keywords {
 			throw new Exception("Unknown Operating System: " + os);
 		}
 	} 
+	
+	public static void waitFor (int seconds) {
+		try {
+			Thread.sleep(seconds * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 	
 }
